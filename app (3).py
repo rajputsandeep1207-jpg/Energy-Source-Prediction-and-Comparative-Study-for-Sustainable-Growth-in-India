@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-import io
 import os
 
 # ── Page config ───────────────────────────────────────────────────────────────
@@ -13,103 +12,68 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── Custom CSS for professional buttons & styling ─────────────────────────────
+# ── Custom CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-/* ── Google Font ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-html, body, [class*="css"] {
-    font-family: 'Inter', sans-serif;
-}
+html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 
-/* ── Hero header ── */
+/* ── Hero ── */
 .hero {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     border-radius: 16px;
     padding: 2.5rem 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     text-align: center;
     color: white;
 }
-.hero h1 {
-    font-size: 1.9rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    line-height: 1.3;
-}
-.hero p {
-    font-size: 1rem;
-    opacity: 0.82;
-    margin: 0;
-}
+.hero h1 { font-size: 1.9rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
+.hero p   { font-size: 1rem; opacity: 0.82; margin: 0; }
 
-/* ── Nav button bar ── */
-.nav-bar {
+/* ── Tab-style nav bar ── */
+.tab-bar {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    gap: 0;
+    flex-wrap: nowrap;
+    margin-bottom: 1.8rem;
+    border-bottom: 3px solid #1a73e8;
+    overflow-x: auto;
 }
-.nav-btn {
+.tab-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
-    border-radius: 8px;
+    gap: 7px;
+    padding: 12px 22px;
     font-size: 0.88rem;
     font-weight: 600;
     cursor: pointer;
     border: none;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    letter-spacing: 0.3px;
-}
-.nav-btn-primary {
-    background: linear-gradient(135deg, #1a73e8, #0d47a1);
-    color: white !important;
-    box-shadow: 0 3px 10px rgba(26,115,232,0.35);
-}
-.nav-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(26,115,232,0.45); }
-
-.nav-btn-success {
-    background: linear-gradient(135deg, #2e7d32, #1b5e20);
-    color: white !important;
-    box-shadow: 0 3px 10px rgba(46,125,50,0.35);
-}
-.nav-btn-success:hover { transform: translateY(-2px); }
-
-.nav-btn-warning {
-    background: linear-gradient(135deg, #f57c00, #e65100);
-    color: white !important;
-    box-shadow: 0 3px 10px rgba(245,124,0,0.35);
-}
-.nav-btn-warning:hover { transform: translateY(-2px); }
-
-.nav-btn-info {
-    background: linear-gradient(135deg, #00838f, #006064);
-    color: white !important;
-    box-shadow: 0 3px 10px rgba(0,131,143,0.35);
-}
-.nav-btn-info:hover { transform: translateY(-2px); }
-
-.nav-btn-purple {
-    background: linear-gradient(135deg, #6a1b9a, #4a148c);
-    color: white !important;
-    box-shadow: 0 3px 10px rgba(106,27,154,0.35);
-}
-.nav-btn-purple:hover { transform: translateY(-2px); }
-
-/* ── Section card ── */
-.section-card {
-    background: #f8fafc;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-decoration: none !important;
+    transition: all 0.18s ease;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    background: #f1f5f9;
+    color: #475569 !important;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1rem;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+}
+.tab-btn:hover {
+    background: #e0eeff;
+    color: #1a73e8 !important;
+    border-bottom: 3px solid #1a73e8;
+}
+.tab-btn.active {
+    background: white;
+    color: #1a73e8 !important;
+    border-bottom: 3px solid #1a73e8;
+    box-shadow: 0 -2px 8px rgba(26,115,232,0.10);
 }
 
-/* ── KPI metric override ── */
+/* ── KPI cards ── */
 [data-testid="metric-container"] {
     background: white;
     border: 1px solid #e2e8f0;
@@ -118,7 +82,7 @@ html, body, [class*="css"] {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ── Download button ── */
+/* ── Download buttons ── */
 .stDownloadButton > button {
     background: linear-gradient(135deg, #1a73e8, #0d47a1) !important;
     color: white !important;
@@ -127,34 +91,16 @@ html, body, [class*="css"] {
     padding: 10px 22px !important;
     font-weight: 600 !important;
     font-size: 0.88rem !important;
-    box-shadow: 0 3px 10px rgba(26,115,232,0.35) !important;
-    transition: all 0.2s ease !important;
+    box-shadow: 0 3px 10px rgba(26,115,232,0.3) !important;
 }
 .stDownloadButton > button:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 16px rgba(26,115,232,0.45) !important;
 }
 
-/* ── Streamlit default button ── */
-.stButton > button {
-    border-radius: 8px !important;
-    font-weight: 600 !important;
-    font-size: 0.88rem !important;
-    padding: 10px 22px !important;
-    transition: all 0.2s ease !important;
-}
-
 /* ── Sidebar ── */
-[data-testid="stSidebar"] {
-    background: #0f2027 !important;
-}
-[data-testid="stSidebar"] * {
-    color: #e2e8f0 !important;
-}
-[data-testid="stSidebar"] .stMultiSelect label {
-    color: #cbd5e0 !important;
-    font-weight: 600;
-}
+[data-testid="stSidebar"] { background: #0f2027 !important; }
+[data-testid="stSidebar"] * { color: #e2e8f0 !important; }
 
 /* ── Footer ── */
 .footer {
@@ -185,10 +131,9 @@ else:
     df = load_data(uploaded_file)
 
 
-# ── Sidebar filters ───────────────────────────────────────────────────────────
+# ── Sidebar ───────────────────────────────────────────────────────────────────
 st.sidebar.markdown("## ⚡ Dashboard Controls")
 st.sidebar.markdown("---")
-
 energy_types = st.sidebar.multiselect(
     "🔋 Energy Type",
     options=df["Energy Type"].unique().tolist(),
@@ -199,20 +144,14 @@ energy_sources = st.sidebar.multiselect(
     options=df["Energy Source"].unique().tolist(),
     default=df["Energy Source"].unique().tolist(),
 )
-
-filtered_df = df[
-    df["Energy Type"].isin(energy_types) & df["Energy Source"].isin(energy_sources)
-]
-
+filtered_df = df[df["Energy Type"].isin(energy_types) & df["Energy Source"].isin(energy_sources)]
 st.sidebar.markdown("---")
 st.sidebar.markdown(f"**{len(filtered_df)}** records selected")
-
-# Reset filters button
 if st.sidebar.button("🔄 Reset Filters"):
     st.rerun()
 
 
-# ── Hero Header ───────────────────────────────────────────────────────────────
+# ── Hero ──────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
     <h1>⚡ A Comparative Analysis of Energy Sources<br>for Sustainable Growth in India</h1>
@@ -221,19 +160,36 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ── Navigation Buttons ────────────────────────────────────────────────────────
-st.markdown("""
-<div class="nav-bar">
-    <a class="nav-btn nav-btn-primary" href="#key-metrics">📊 Key Metrics</a>
-    <a class="nav-btn nav-btn-success" href="#emissions-cost">🌿 Emissions & Cost</a>
-    <a class="nav-btn nav-btn-warning" href="#generation-analysis">⚡ Generation Analysis</a>
-    <a class="nav-btn nav-btn-info" href="#correlation">🔗 Correlation</a>
-    <a class="nav-btn nav-btn-purple" href="#data-table">📋 Data Table</a>
-</div>
-""", unsafe_allow_html=True)
+# ── Tab-style Navigation ──────────────────────────────────────────────────────
+TABS = {
+    "📊 Key Metrics":          "key-metrics",
+    "🌿 Emissions & Cost":     "emissions-cost",
+    "⚡ Generation Analysis":  "generation-analysis",
+    "🔗 Correlation":          "correlation",
+    "📋 Data Table":           "data-table",
+}
+
+if "active_tab" not in st.session_state:
+    st.session_state.active_tab = list(TABS.keys())[0]
+
+# Render tab bar
+tab_html = '<div class="tab-bar">'
+for label in TABS:
+    active_class = "active" if st.session_state.active_tab == label else ""
+    tab_html += f'<a class="tab-btn {active_class}" href="#{TABS[label]}">{label}</a>'
+tab_html += "</div>"
+st.markdown(tab_html, unsafe_allow_html=True)
+
+# Streamlit buttons (invisible but functional for state)
+tab_cols = st.columns(len(TABS))
+for i, label in enumerate(TABS):
+    with tab_cols[i]:
+        if st.button(label, key=f"tab_{i}", use_container_width=True):
+            st.session_state.active_tab = label
+            st.rerun()
 
 
-# ── KPI Cards ─────────────────────────────────────────────────────────────────
+# ── Section: Key Metrics ──────────────────────────────────────────────────────
 st.markdown('<a name="key-metrics"></a>', unsafe_allow_html=True)
 st.subheader("📊 Key Metrics")
 col1, col2, col3, col4 = st.columns(4)
@@ -248,12 +204,12 @@ col4.metric("⚙️ Avg Generation Cost",
 st.divider()
 
 
-# ── Charts Row 1 ─────────────────────────────────────────────────────────────
+# ── Section: Emissions & Cost ─────────────────────────────────────────────────
 st.markdown('<a name="emissions-cost"></a>', unsafe_allow_html=True)
 st.subheader("🌿 Emissions & Installation Cost")
-row1_col1, row1_col2 = st.columns(2)
+r1c1, r1c2 = st.columns(2)
 
-with row1_col1:
+with r1c1:
     co2_data = (filtered_df.groupby("Energy Source")["CO2 Emission (kg per kWh)"]
                 .mean().sort_values(ascending=False).reset_index())
     fig, ax = plt.subplots(figsize=(7, 4))
@@ -261,10 +217,9 @@ with row1_col1:
     ax.barh(co2_data["Energy Source"], co2_data["CO2 Emission (kg per kWh)"], color=colors)
     ax.set_xlabel("CO₂ Emission (kg per kWh)")
     ax.set_title("Avg CO₂ Emission by Energy Source")
-    plt.tight_layout()
-    st.pyplot(fig); plt.close()
+    plt.tight_layout(); st.pyplot(fig); plt.close()
 
-with row1_col2:
+with r1c2:
     cost_data = (filtered_df.groupby("Energy Source")["Installation Cost (INR per kW)"]
                  .mean().sort_values(ascending=False).reset_index())
     fig, ax = plt.subplots(figsize=(7, 4))
@@ -272,17 +227,17 @@ with row1_col2:
             color=sns.color_palette("Blues_r", len(cost_data)))
     ax.set_xlabel("Installation Cost (INR per kW)")
     ax.set_title("Avg Installation Cost by Energy Source")
-    plt.tight_layout()
-    st.pyplot(fig); plt.close()
+    plt.tight_layout(); st.pyplot(fig); plt.close()
 
 st.divider()
 
-# ── Charts Row 2 ─────────────────────────────────────────────────────────────
+
+# ── Section: Generation Analysis ──────────────────────────────────────────────
 st.markdown('<a name="generation-analysis"></a>', unsafe_allow_html=True)
 st.subheader("⚡ Generation & Pricing Analysis")
-row2_col1, row2_col2 = st.columns(2)
+r2c1, r2c2 = st.columns(2)
 
-with row2_col1:
+with r2c1:
     gen_data = (filtered_df.groupby("Energy Source")["Percentage of Generation (India)"]
                 .mean().reset_index())
     fig, ax = plt.subplots(figsize=(6, 5))
@@ -290,10 +245,9 @@ with row2_col1:
            labels=gen_data["Energy Source"], autopct="%1.1f%%", startangle=140,
            colors=sns.color_palette("tab10", len(gen_data)))
     ax.set_title("🇮🇳 Share of Electricity Generation in India")
-    plt.tight_layout()
-    st.pyplot(fig); plt.close()
+    plt.tight_layout(); st.pyplot(fig); plt.close()
 
-with row2_col2:
+with r2c2:
     avg_costs = (filtered_df.groupby("Energy Source")[
         ["Generation Cost (INR per unit)", "Selling Price per Unit (INR)"]].mean().reset_index())
     x = np.arange(len(avg_costs)); width = 0.35
@@ -306,12 +260,12 @@ with row2_col2:
     ax.set_xticklabels(avg_costs["Energy Source"], rotation=30, ha="right")
     ax.set_ylabel("INR per Unit")
     ax.set_title("Generation Cost vs Selling Price")
-    ax.legend(); plt.tight_layout()
-    st.pyplot(fig); plt.close()
+    ax.legend(); plt.tight_layout(); st.pyplot(fig); plt.close()
 
 st.divider()
 
-# ── Correlation Heatmap ───────────────────────────────────────────────────────
+
+# ── Section: Correlation ──────────────────────────────────────────────────────
 st.markdown('<a name="correlation"></a>', unsafe_allow_html=True)
 st.subheader("🔗 Correlation Heatmap")
 numeric_cols = filtered_df.select_dtypes(include=np.number).columns.tolist()
@@ -319,12 +273,12 @@ corr = filtered_df[numeric_cols].corr()
 fig, ax = plt.subplots(figsize=(12, 6))
 sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", ax=ax, linewidths=0.5)
 ax.set_title("Correlation Between Numeric Features")
-plt.tight_layout()
-st.pyplot(fig); plt.close()
+plt.tight_layout(); st.pyplot(fig); plt.close()
 
 st.divider()
 
-# ── Summary Table + Download ──────────────────────────────────────────────────
+
+# ── Section: Data Table ───────────────────────────────────────────────────────
 st.markdown('<a name="data-table"></a>', unsafe_allow_html=True)
 st.subheader("📋 Aggregated Summary by Energy Source")
 
@@ -341,32 +295,19 @@ summary = (
 )
 st.dataframe(summary, use_container_width=True)
 
-# Download buttons row
-dl_col1, dl_col2, dl_col3 = st.columns([1, 1, 4])
+dl1, dl2, _ = st.columns([1, 1, 4])
+with dl1:
+    st.download_button("⬇️ Download Filtered CSV",
+                       filtered_df.to_csv(index=False).encode("utf-8"),
+                       "filtered_energy_data.csv", "text/csv")
+with dl2:
+    st.download_button("⬇️ Download Summary CSV",
+                       summary.to_csv(index=False).encode("utf-8"),
+                       "energy_summary.csv", "text/csv")
 
-with dl_col1:
-    csv_bytes = filtered_df.to_csv(index=False).encode("utf-8")
-    st.download_button(
-        label="⬇️ Download Filtered CSV",
-        data=csv_bytes,
-        file_name="filtered_energy_data.csv",
-        mime="text/csv",
-    )
-
-with dl_col2:
-    summary_csv = summary.to_csv(index=False).encode("utf-8")
-    st.download_button(
-        label="⬇️ Download Summary CSV",
-        data=summary_csv,
-        file_name="energy_summary.csv",
-        mime="text/csv",
-    )
-
-st.divider()
-
-# ── Raw Data Expander ─────────────────────────────────────────────────────────
 with st.expander("🗂️ View Full Raw Data"):
     st.dataframe(filtered_df.reset_index(drop=True), use_container_width=True)
+
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
