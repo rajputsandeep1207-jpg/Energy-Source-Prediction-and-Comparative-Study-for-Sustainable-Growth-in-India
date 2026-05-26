@@ -91,14 +91,29 @@ html, body, [class*="css"] {
 /* ── KPI cards ── */
 [data-testid="metric-container"] {
     background: #1a1a1a !important;
-    border: 1px solid #2d2d2d !important;
+    border: 1px solid #4f8ef7 !important;
     border-radius: 12px !important;
     padding: 1rem !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+    box-shadow: 0 2px 16px rgba(79,142,247,0.15) !important;
 }
 [data-testid="metric-container"] label,
-[data-testid="metric-container"] div {
-    color: #e2e8f0 !important;
+[data-testid="metric-container"] div,
+[data-testid="metric-container"] p,
+[data-testid="metric-container"] span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+[data-testid="stMetricLabel"] {
+    color: #a0aec0 !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+[data-testid="stMetricValue"] {
+    color: #ffffff !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
 }
 
 /* ── Dataframe ── */
