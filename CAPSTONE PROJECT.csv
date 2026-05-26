@@ -1,0 +1,101 @@
+Energy Source,Energy Type,Installation Cost (INR per kW),Land Requirement (Acres per MW),Generation Cost (INR per unit),Manpower Required (per MW),Automation Level,O&M Cost (% of Capital),Purpose of Energy,CO2 Emission (kg per kWh),Effect on Global Warming,Effect of Natural Disaster,Available Employment,Sustainability,Cost of Natural Resource,Percentage of Generation (India),Effect on Economy,Government Subsidy Availability,Selling Price per Unit (INR),Transmission Loss (%),Shutdown Risk,Generation of Electricity (kWh per kW per year)
+Fossil Fuel,Non-Renewable,52965,0.94,6.86,15,Medium,4.95,Electricity,0.828,High,Medium,High,Non-Sustainable,2951,53.17,Negative,Low,7.43,20.6,Medium,8126
+Tidal/Wave,Renewable,131277,4.27,6.6,5,High,3.75,Electricity,0,Very Low,High,Low,Sustainable,0,1.97,Positive,Low,7.19,9.2,Medium,4459
+Wind,Renewable,54559,2.19,3.31,5,High,2.05,Electricity,0.02,Very Low,Medium,Medium,Sustainable,0,34.77,Positive,High,4.29,7.25,Low,2860
+Solar,Renewable,41085,5.45,4.37,5,High,1.44,Electricity,0.046,Very Low,Low,High,Sustainable,0,24.7,Positive,High,4.16,7.99,Low,1470
+Fossil Fuel,Non-Renewable,46733,0.98,6.09,16,Medium,4.93,Electricity,0.847,High,Medium,High,Non-Sustainable,3081,49.84,Negative,Low,8.55,19.8,Medium,8130
+Wind,Renewable,64737,2.04,3.8,5,High,1.88,Electricity,0.018,Very Low,Medium,Medium,Sustainable,0,34.22,Positive,High,3.82,7.46,Low,2071
+Wind,Renewable,65583,2.04,3.34,5,High,1.87,Electricity,0.018,Very Low,Medium,Medium,Sustainable,0,34.26,Positive,High,3.83,6.32,Low,2700
+Biomass,Renewable,72896,3.14,5.27,9,Medium,3.4,Electricity/Heat,0.369,Medium,Medium,Medium,Renewable,2290,8.2,Moderate,Medium,5.8,9.13,Medium,7544
+Fossil Fuel,Non-Renewable,51688,1.03,6.62,13,Medium,5.06,Electricity,0.879,High,Medium,High,Non-Sustainable,3566,58.84,Negative,Low,8.35,18.94,Medium,7121
+Geothermal,Renewable,89888,1.51,4.43,5,High,2.76,Electricity/Heat,0.091,Low,Low,Medium,Renewable,527,2.89,Positive,Medium,5.51,7.57,Low,7466
+Fossil Fuel,Non-Renewable,51044,1.01,6.11,17,Medium,5.1,Electricity,0.935,High,Medium,High,Non-Sustainable,3456,56.37,Negative,Low,7.67,18.42,Medium,8238
+Hydropower,Renewable,84858,9.37,3.24,8,High,2.65,Electricity,0.011,Low,High,Medium,Sustainable,0,18.44,Very Positive,Medium,3.31,5.91,High,4330
+Hydropower,Renewable,77641,9.61,2.8,8,High,2.49,Electricity,0.01,Low,High,Medium,Sustainable,0,18.98,Very Positive,Medium,3.27,5.66,High,5482
+Nuclear,Non-Renewable,156090,1.95,6.02,23,High,5.7,Electricity,0.02,Low,High,High,Non-Renewable,920,9.57,Mixed,Low,5.9,7.15,High,8087
+Wind,Renewable,58932,1.81,3.39,6,High,2.07,Electricity,0.02,Very Low,Medium,Medium,Sustainable,0,35.37,Positive,High,4.07,6.41,Low,2372
+Nuclear,Non-Renewable,142129,2.09,5.35,21,High,6.16,Electricity,0.02,Low,High,High,Non-Renewable,836,10.67,Mixed,Low,6.27,6.56,High,8099
+Tidal/Wave,Renewable,128600,3.86,6.61,6,High,4.25,Electricity,0,Very Low,High,Low,Sustainable,0,2.18,Positive,Low,7.35,9.03,Medium,3871
+Nuclear,Non-Renewable,139125,1.94,5.07,23,High,6.45,Electricity,0.019,Low,High,High,Non-Renewable,1063,10.63,Mixed,Low,6.57,7.04,High,8663
+Wind,Renewable,65955,2.19,3.54,6,High,1.88,Electricity,0.019,Very Low,Medium,Medium,Sustainable,0,37.43,Positive,High,4.29,6.87,Low,2130
+Solar,Renewable,46278,4.58,3.73,5,High,1.53,Electricity,0.045,Very Low,Low,High,Sustainable,0,25.82,Positive,High,4.05,7.46,Low,1508
+Wind,Renewable,59827,1.98,3.85,5,High,1.81,Electricity,0.02,Very Low,Medium,Medium,Sustainable,0,34.07,Positive,High,4.2,7.31,Low,2769
+Nuclear,Non-Renewable,152049,1.84,5.35,18,High,5.69,Electricity,0.022,Low,High,High,Non-Renewable,957,10.78,Mixed,Low,6.67,7.41,High,8343
+Geothermal,Renewable,92611,1.55,4.83,6,High,3,Electricity/Heat,0.101,Low,Low,Medium,Renewable,553,2.73,Positive,Medium,6.04,6.96,Low,8515
+Geothermal,Renewable,97467,1.46,4.06,8,High,2.96,Electricity/Heat,0.109,Low,Low,Medium,Renewable,592,3.21,Positive,Medium,5.27,6.84,Low,8437
+Fossil Fuel,Non-Renewable,47684,1,6.33,14,Medium,5.34,Electricity,0.977,High,Medium,High,Non-Sustainable,2484,51.8,Negative,Low,8.27,19.43,Medium,7805
+Fossil Fuel,Non-Renewable,50183,1.08,6.81,16,Medium,5.2,Electricity,0.875,High,Medium,High,Non-Sustainable,2752,58.4,Negative,Low,8.5,21.47,Medium,7385
+Tidal/Wave,Renewable,109958,3.6,7.18,5,High,3.66,Electricity,0,Very Low,High,Low,Sustainable,0,2.15,Positive,Low,6.79,9.14,Medium,4215
+Nuclear,Non-Renewable,152348,1.81,5.46,20,High,5.74,Electricity,0.02,Low,High,High,Non-Renewable,812,9.07,Mixed,Low,6.92,6.8,High,8955
+Hydropower,Renewable,77226,10.66,2.86,9,High,2.48,Electricity,0.011,Low,High,Medium,Sustainable,0,19.65,Very Positive,Medium,3.64,5.57,High,4276
+Nuclear,Non-Renewable,164275,2.01,5.31,22,High,5.72,Electricity,0.02,Low,High,High,Non-Renewable,831,9.05,Mixed,Low,7.1,7.47,High,8160
+Solar,Renewable,46696,4.56,4.33,4,High,1.42,Electricity,0.046,Very Low,Low,High,Sustainable,0,27.17,Positive,High,4.62,8.03,Low,1659
+Nuclear,Non-Renewable,151630,2.04,5.41,17,High,5.83,Electricity,0.021,Low,High,High,Non-Renewable,805,9.23,Mixed,Low,5.91,6.36,High,8313
+Geothermal,Renewable,98631,1.4,4.07,7,High,3.18,Electricity/Heat,0.097,Low,Low,Medium,Renewable,492,3.09,Positive,Medium,5,7.63,Low,7021
+Hydropower,Renewable,72724,9.75,3.08,8,High,2.68,Electricity,0.01,Low,High,Medium,Sustainable,0,18.28,Very Positive,Medium,3.6,5.43,High,4252
+Nuclear,Non-Renewable,154092,2.12,5.69,20,High,5.55,Electricity,0.021,Low,High,High,Non-Renewable,1128,10.25,Mixed,Low,6.92,7.21,High,8747
+Biomass,Renewable,65741,2.74,4.6,9,Medium,3.22,Electricity/Heat,0.415,Medium,Medium,Medium,Renewable,1656,7.71,Moderate,Medium,6.41,9.05,Medium,7356
+Wind,Renewable,57128,2,3.64,5,High,2.17,Electricity,0.018,Very Low,Medium,Medium,Sustainable,0,38.27,Positive,High,4.04,6.89,Low,2560
+Nuclear,Non-Renewable,159205,2.2,5.4,18,High,6.33,Electricity,0.019,Low,High,High,Non-Renewable,1172,10.72,Mixed,Low,6.41,7.35,High,8474
+Solar,Renewable,42644,4.88,4.03,4,High,1.47,Electricity,0.048,Very Low,Low,High,Sustainable,0,22.77,Positive,High,4.91,8.56,Low,1258
+Solar,Renewable,43373,5.45,4.36,5,High,1.54,Electricity,0.049,Very Low,Low,High,Sustainable,0,24.14,Positive,High,4.66,8.4,Low,1710
+Fossil Fuel,Non-Renewable,52812,0.92,7.06,17,Medium,5.5,Electricity,0.82,High,Medium,High,Non-Sustainable,3284,55.51,Negative,Low,8.33,21.87,Medium,8499
+Solar,Renewable,47353,5.12,3.68,4,High,1.56,Electricity,0.046,Very Low,Low,High,Sustainable,0,26.03,Positive,High,4.12,7.34,Low,1389
+Biomass,Renewable,71138,3.22,5.38,10,Medium,3.79,Electricity/Heat,0.407,Medium,Medium,Medium,Renewable,1880,8.33,Moderate,Medium,5.98,9.76,Medium,7457
+Fossil Fuel,Non-Renewable,49242,1.08,5.99,14,Medium,4.51,Electricity,0.894,High,Medium,High,Non-Sustainable,2467,50.81,Negative,Low,7.39,20.6,Medium,7686
+Solar,Renewable,46629,4.74,3.92,4,High,1.37,Electricity,0.05,Very Low,Low,High,Sustainable,0,26.51,Positive,High,4.93,8.09,Low,1762
+Fossil Fuel,Non-Renewable,53911,1.01,7.14,12,Medium,5.05,Electricity,0.984,High,Medium,High,Non-Sustainable,3027,56.42,Negative,Low,8.31,19.82,Medium,8267
+Tidal/Wave,Renewable,124726,3.91,7.33,6,High,4.37,Electricity,0,Very Low,High,Low,Sustainable,0,1.84,Positive,Low,7.25,8.41,Medium,3831
+Hydropower,Renewable,79419,9.71,3.05,6,High,2.74,Electricity,0.011,Low,High,Medium,Sustainable,0,20.14,Very Positive,Medium,3.37,6.38,High,5528
+Hydropower,Renewable,76335,9.27,2.75,9,High,2.46,Electricity,0.01,Low,High,Medium,Sustainable,0,18.33,Very Positive,Medium,3.76,6.06,High,5154
+Tidal/Wave,Renewable,108632,3.9,7.43,7,High,3.72,Electricity,0,Very Low,High,Low,Sustainable,0,2.19,Positive,Low,8.01,9.61,Medium,3646
+Wind,Renewable,54441,1.85,3.16,4,High,2.08,Electricity,0.02,Very Low,Medium,Medium,Sustainable,0,37.89,Positive,High,4.07,7.32,Low,2020
+Wind,Renewable,64195,1.9,3.47,5,High,2.18,Electricity,0.02,Very Low,Medium,Medium,Sustainable,0,36.2,Positive,High,4.09,6.8,Low,2840
+Nuclear,Non-Renewable,135665,2,5.47,22,High,5.77,Electricity,0.021,Low,High,High,Non-Renewable,1187,9.18,Mixed,Low,6.88,7.13,High,8166
+Fossil Fuel,Non-Renewable,45287,1.05,6.66,16,Medium,4.71,Electricity,0.835,High,Medium,High,Non-Sustainable,2417,53.36,Negative,Low,8.14,19.57,Medium,8297
+Biomass,Renewable,64274,3.14,5.05,11,Medium,3.79,Electricity/Heat,0.384,Medium,Medium,Medium,Renewable,2018,8.32,Moderate,Medium,6.36,9.92,Medium,6887
+Solar,Renewable,44929,4.76,3.97,5,High,1.5,Electricity,0.048,Very Low,Low,High,Sustainable,0,23.7,Positive,High,4.12,7.41,Low,1515
+Fossil Fuel,Non-Renewable,50847,0.98,6.76,13,Medium,5.2,Electricity,0.884,High,Medium,High,Non-Sustainable,3449,55.17,Negative,Low,8.76,20.41,Medium,7013
+Biomass,Renewable,63572,2.8,4.78,10,Medium,3.21,Electricity/Heat,0.37,Medium,Medium,Medium,Renewable,1968,7.53,Moderate,Medium,5.84,10.01,Medium,6741
+Tidal/Wave,Renewable,115717,3.67,6.97,6,High,4.01,Electricity,0,Very Low,High,Low,Sustainable,0,1.8,Positive,Low,8.05,8.25,Medium,3776
+Biomass,Renewable,65583,2.83,4.87,11,Medium,3.58,Electricity/Heat,0.39,Medium,Medium,Medium,Renewable,1970,8.4,Moderate,Medium,5.44,9.5,Medium,7869
+Fossil Fuel,Non-Renewable,51871,1.07,6.82,12,Medium,5.37,Electricity,0.874,High,Medium,High,Non-Sustainable,2876,50.65,Negative,Low,8.38,18.73,Medium,7564
+Fossil Fuel,Non-Renewable,48220,0.94,6.28,12,Medium,5.39,Electricity,0.917,High,Medium,High,Non-Sustainable,3214,58.18,Negative,Low,8,18.35,Medium,7897
+Fossil Fuel,Non-Renewable,52368,1.01,6.61,15,Medium,4.88,Electricity,0.871,High,Medium,High,Non-Sustainable,3479,56.18,Negative,Low,7.59,19.99,Medium,8363
+Geothermal,Renewable,91903,1.42,4.14,6,High,2.85,Electricity/Heat,0.093,Low,Low,Medium,Renewable,437,2.87,Positive,Medium,5.14,7.56,Low,7091
+Fossil Fuel,Non-Renewable,45516,0.9,6.76,17,Medium,5.4,Electricity,0.914,High,Medium,High,Non-Sustainable,3500,49.56,Negative,Low,8.76,19.96,Medium,8390
+Geothermal,Renewable,93035,1.63,4.55,7,High,2.87,Electricity/Heat,0.105,Low,Low,Medium,Renewable,437,2.89,Positive,Medium,5.42,7.01,Low,7955
+Solar,Renewable,45268,5.21,4.21,4,High,1.5,Electricity,0.054,Very Low,Low,High,Sustainable,0,25.47,Positive,High,4.38,7.93,Low,1654
+Tidal/Wave,Renewable,109520,4.39,6.75,6,High,3.8,Electricity,0,Very Low,High,Low,Sustainable,0,2.04,Positive,Low,7.46,8.84,Medium,4451
+Geothermal,Renewable,82920,1.61,4.72,6,High,3.26,Electricity/Heat,0.11,Low,Low,Medium,Renewable,441,2.93,Positive,Medium,5.97,7.31,Low,7508
+Hydropower,Renewable,85469,9.28,3.18,7,High,2.33,Electricity,0.009,Low,High,Medium,Sustainable,0,20.66,Very Positive,Medium,3.52,5.83,High,4775
+Tidal/Wave,Renewable,122119,4.15,6.93,6,High,4.32,Electricity,0,Very Low,High,Low,Sustainable,0,1.98,Positive,Low,7.62,8.74,Medium,3034
+Fossil Fuel,Non-Renewable,48838,1.01,7.03,15,Medium,4.62,Electricity,0.979,High,Medium,High,Non-Sustainable,3153,53.18,Negative,Low,7.42,21.18,Medium,7205
+Tidal/Wave,Renewable,119890,4.19,7.1,7,High,4.2,Electricity,0,Very Low,High,Low,Sustainable,0,1.86,Positive,Low,7.06,9.39,Medium,4104
+Tidal/Wave,Renewable,129042,3.87,7.45,5,High,4.28,Electricity,0,Very Low,High,Low,Sustainable,0,2.12,Positive,Low,6.97,8.51,Medium,4411
+Hydropower,Renewable,84350,9.02,3.06,8,High,2.61,Electricity,0.01,Low,High,Medium,Sustainable,0,21.84,Very Positive,Medium,3.39,5.67,High,5025
+Fossil Fuel,Non-Renewable,49620,1.09,6.05,15,Medium,5.01,Electricity,0.92,High,Medium,High,Non-Sustainable,2421,59.09,Negative,Low,8.69,20.26,Medium,8021
+Hydropower,Renewable,84641,9.05,3.09,8,High,2.44,Electricity,0.009,Low,High,Medium,Sustainable,0,18.42,Very Positive,Medium,3.74,6.49,High,5413
+Solar,Renewable,41519,5.48,4.27,4,High,1.63,Electricity,0.054,Very Low,Low,High,Sustainable,0,25.46,Positive,High,4.41,7.29,Low,1765
+Solar,Renewable,42350,5.29,4.08,4,High,1.47,Electricity,0.054,Very Low,Low,High,Sustainable,0,24.83,Positive,High,4.48,8.67,Low,1305
+Nuclear,Non-Renewable,141738,1.98,5.1,17,High,6,Electricity,0.02,Low,High,High,Non-Renewable,1165,9.72,Mixed,Low,6.6,7.19,High,8771
+Hydropower,Renewable,75402,10.03,3.29,7,High,2.53,Electricity,0.011,Low,High,Medium,Sustainable,0,18.74,Very Positive,Medium,3.36,5.77,High,5845
+Geothermal,Renewable,94499,1.41,4.86,6,High,2.81,Electricity/Heat,0.091,Low,Low,Medium,Renewable,494,3.04,Positive,Medium,5.02,7.39,Low,8500
+Fossil Fuel,Non-Renewable,50276,1.01,6.48,14,Medium,5.27,Electricity,0.829,High,Medium,High,Non-Sustainable,2801,50.33,Negative,Low,8.41,19.09,Medium,7702
+Biomass,Renewable,72015,2.95,4.53,10,Medium,3.65,Electricity/Heat,0.413,Medium,Medium,Medium,Renewable,1621,7.56,Moderate,Medium,5.68,10.34,Medium,6901
+Tidal/Wave,Renewable,122281,3.87,7.1,6,High,4.05,Electricity,0,Very Low,High,Low,Sustainable,0,2.2,Positive,Low,7.65,9.55,Medium,3729
+Nuclear,Non-Renewable,146915,2.07,5.18,18,High,6.48,Electricity,0.018,Low,High,High,Non-Renewable,834,9.42,Mixed,Low,5.88,6.55,High,8555
+Hydropower,Renewable,82286,10.41,3.25,8,High,2.42,Electricity,0.011,Low,High,Medium,Sustainable,0,18.14,Very Positive,Medium,3.73,5.81,High,4161
+Nuclear,Non-Renewable,151561,1.97,5.27,23,High,6.32,Electricity,0.019,Low,High,High,Non-Renewable,1147,9.97,Mixed,Low,7.01,7.42,High,8201
+Solar,Renewable,44863,5.01,4.19,5,High,1.47,Electricity,0.047,Very Low,Low,High,Sustainable,0,24.61,Positive,High,4.17,8.64,Low,1469
+Wind,Renewable,57267,1.81,3.79,5,High,2.03,Electricity,0.019,Very Low,Medium,Medium,Sustainable,0,36.06,Positive,High,4.26,6.59,Low,2862
+Wind,Renewable,55680,1.91,3.34,6,High,1.9,Electricity,0.021,Very Low,Medium,Medium,Sustainable,0,35.51,Positive,High,4.27,6.87,Low,2815
+Geothermal,Renewable,90340,1.36,4.2,7,High,2.75,Electricity/Heat,0.102,Low,Low,Medium,Renewable,449,2.93,Positive,Medium,5.27,6.8,Low,8294
+Solar,Renewable,46993,5.11,4.36,4,High,1.64,Electricity,0.046,Very Low,Low,High,Sustainable,0,23.85,Positive,High,4.54,7.46,Low,1655
+Hydropower,Renewable,72822,9.99,3.06,7,High,2.64,Electricity,0.009,Low,High,Medium,Sustainable,0,20.91,Very Positive,Medium,3.5,6.23,High,5485
+Wind,Renewable,59516,1.83,3.2,4,High,2.19,Electricity,0.018,Very Low,Medium,Medium,Sustainable,0,33.7,Positive,High,4.25,7.65,Low,2726
+Solar,Renewable,49052,4.95,3.75,5,High,1.61,Electricity,0.052,Very Low,Low,High,Sustainable,0,25.79,Positive,High,4.67,8.56,Low,1451
+Solar,Renewable,48630,5.15,4.15,4,High,1.55,Electricity,0.045,Very Low,Low,High,Sustainable,0,27.5,Positive,High,4.55,7.96,Low,1495
+Fossil Fuel,Non-Renewable,45339,1.04,6.24,17,Medium,5.47,Electricity,0.98,High,Medium,High,Non-Sustainable,2969,58.98,Negative,Low,8.55,19.28,Medium,7719
+Wind,Renewable,61734,2.06,3.41,6,High,1.99,Electricity,0.022,Very Low,Medium,Medium,Sustainable,0,34.59,Positive,High,3.92,7.1,Low,2748
+Nuclear,Non-Renewable,151184,2.12,5.3,21,High,6.46,Electricity,0.02,Low,High,High,Non-Renewable,893,9.05,Mixed,Low,6.98,6.33,High,8337
