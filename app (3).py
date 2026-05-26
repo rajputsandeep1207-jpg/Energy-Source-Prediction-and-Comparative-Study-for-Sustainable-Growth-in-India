@@ -12,32 +12,48 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── Custom CSS ────────────────────────────────────────────────────────────────
+# ── Dark Theme CSS ────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: #0e0e0e !important;
+    color: #e2e8f0 !important;
+}
+
+/* ── App background ── */
+.stApp {
+    background-color: #0e0e0e !important;
+}
 
 /* ── Hero ── */
 .hero {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    border: 1px solid #2d2d2d;
     border-radius: 16px;
     padding: 2.5rem 2rem;
     margin-bottom: 0;
     text-align: center;
     color: white;
 }
-.hero h1 { font-size: 1.9rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
-.hero p   { font-size: 1rem; opacity: 0.82; margin: 0; }
+.hero h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    color: #e2e8f0;
+}
+.hero p { font-size: 1rem; opacity: 0.75; margin: 0; color: #a0aec0; }
 
-/* ── Tab-style nav bar ── */
+/* ── Tab bar ── */
 .tab-bar {
     display: flex;
     gap: 0;
     flex-wrap: nowrap;
     margin-bottom: 1.8rem;
-    border-bottom: 3px solid #1a73e8;
+    border-bottom: 3px solid #4f8ef7;
     overflow-x: auto;
 }
 .tab-btn {
@@ -48,67 +64,106 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     font-size: 0.88rem;
     font-weight: 600;
     cursor: pointer;
-    border: none;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     text-decoration: none !important;
     transition: all 0.18s ease;
     letter-spacing: 0.2px;
     white-space: nowrap;
-    background: #f1f5f9;
-    color: #475569 !important;
-    border: 1px solid #e2e8f0;
+    background: #1a1a1a;
+    color: #94a3b8 !important;
+    border: 1px solid #2d2d2d;
     border-bottom: 3px solid transparent;
     margin-bottom: -3px;
 }
 .tab-btn:hover {
-    background: #e0eeff;
-    color: #1a73e8 !important;
-    border-bottom: 3px solid #1a73e8;
+    background: #1e2a3a;
+    color: #4f8ef7 !important;
+    border-bottom: 3px solid #4f8ef7;
 }
 .tab-btn.active {
-    background: white;
-    color: #1a73e8 !important;
-    border-bottom: 3px solid #1a73e8;
-    box-shadow: 0 -2px 8px rgba(26,115,232,0.10);
+    background: #111827;
+    color: #4f8ef7 !important;
+    border-bottom: 3px solid #4f8ef7;
+    box-shadow: 0 -2px 8px rgba(79,142,247,0.15);
 }
 
 /* ── KPI cards ── */
 [data-testid="metric-container"] {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #1a1a1a !important;
+    border: 1px solid #2d2d2d !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+}
+[data-testid="metric-container"] label,
+[data-testid="metric-container"] div {
+    color: #e2e8f0 !important;
+}
+
+/* ── Dataframe ── */
+.stDataFrame { background: #1a1a1a !important; border-radius: 10px; }
+
+/* ── Divider ── */
+hr { border-color: #2d2d2d !important; }
+
+/* ── Expander ── */
+.streamlit-expanderHeader {
+    background: #1a1a1a !important;
+    color: #e2e8f0 !important;
+    border: 1px solid #2d2d2d !important;
+    border-radius: 8px !important;
 }
 
 /* ── Download buttons ── */
 .stDownloadButton > button {
-    background: linear-gradient(135deg, #1a73e8, #0d47a1) !important;
+    background: linear-gradient(135deg, #4f8ef7, #1a56db) !important;
     color: white !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 10px 22px !important;
     font-weight: 600 !important;
     font-size: 0.88rem !important;
-    box-shadow: 0 3px 10px rgba(26,115,232,0.3) !important;
+    box-shadow: 0 3px 10px rgba(79,142,247,0.3) !important;
 }
 .stDownloadButton > button:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 16px rgba(26,115,232,0.45) !important;
+    box-shadow: 0 6px 16px rgba(79,142,247,0.5) !important;
+}
+
+/* ── Streamlit tab buttons ── */
+.stButton > button {
+    background: #1a1a1a !important;
+    color: #94a3b8 !important;
+    border: 1px solid #2d2d2d !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+.stButton > button:hover {
+    background: #1e2a3a !important;
+    color: #4f8ef7 !important;
+    border-color: #4f8ef7 !important;
 }
 
 /* ── Sidebar ── */
-[data-testid="stSidebar"] { background: #0f2027 !important; }
-[data-testid="stSidebar"] * { color: #e2e8f0 !important; }
+[data-testid="stSidebar"] { background: #111111 !important; border-right: 1px solid #2d2d2d; }
+[data-testid="stSidebar"] * { color: #cbd5e0 !important; }
+[data-testid="stSidebar"] .stButton > button {
+    background: #1e2a3a !important;
+    border-color: #4f8ef7 !important;
+    color: #4f8ef7 !important;
+}
+
+/* ── Subheaders ── */
+h2, h3 { color: #e2e8f0 !important; }
 
 /* ── Footer ── */
 .footer {
     text-align: center;
-    color: #94a3b8;
+    color: #4a5568;
     font-size: 0.8rem;
     padding: 1.5rem 0 0.5rem 0;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #2d2d2d;
     margin-top: 2rem;
 }
 </style>
@@ -160,19 +215,18 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ── Tab-style Navigation ──────────────────────────────────────────────────────
+# ── Tab Navigation ────────────────────────────────────────────────────────────
 TABS = {
-    "📊 Key Metrics":          "key-metrics",
-    "🌿 Emissions & Cost":     "emissions-cost",
-    "⚡ Generation Analysis":  "generation-analysis",
-    "🔗 Correlation":          "correlation",
-    "📋 Data Table":           "data-table",
+    "📊 Key Metrics":         "key-metrics",
+    "🌿 Emissions & Cost":    "emissions-cost",
+    "⚡ Generation Analysis": "generation-analysis",
+    "🔗 Correlation":         "correlation",
+    "📋 Data Table":          "data-table",
 }
 
 if "active_tab" not in st.session_state:
     st.session_state.active_tab = list(TABS.keys())[0]
 
-# Render tab bar
 tab_html = '<div class="tab-bar">'
 for label in TABS:
     active_class = "active" if st.session_state.active_tab == label else ""
@@ -180,13 +234,27 @@ for label in TABS:
 tab_html += "</div>"
 st.markdown(tab_html, unsafe_allow_html=True)
 
-# Streamlit buttons (invisible but functional for state)
 tab_cols = st.columns(len(TABS))
 for i, label in enumerate(TABS):
     with tab_cols[i]:
         if st.button(label, key=f"tab_{i}", use_container_width=True):
             st.session_state.active_tab = label
             st.rerun()
+
+
+# ── Dark matplotlib style ─────────────────────────────────────────────────────
+plt.rcParams.update({
+    "figure.facecolor":  "#1a1a1a",
+    "axes.facecolor":    "#1a1a1a",
+    "axes.edgecolor":    "#3d3d3d",
+    "axes.labelcolor":   "#e2e8f0",
+    "xtick.color":       "#94a3b8",
+    "ytick.color":       "#94a3b8",
+    "text.color":        "#e2e8f0",
+    "grid.color":        "#2d2d2d",
+    "legend.facecolor":  "#1a1a1a",
+    "legend.edgecolor":  "#3d3d3d",
+})
 
 
 # ── Section: Key Metrics ──────────────────────────────────────────────────────
@@ -213,7 +281,7 @@ with r1c1:
     co2_data = (filtered_df.groupby("Energy Source")["CO2 Emission (kg per kWh)"]
                 .mean().sort_values(ascending=False).reset_index())
     fig, ax = plt.subplots(figsize=(7, 4))
-    colors = ["#d62728" if s == "Fossil Fuel" else "#2ca02c" for s in co2_data["Energy Source"]]
+    colors = ["#ef4444" if s == "Fossil Fuel" else "#22c55e" for s in co2_data["Energy Source"]]
     ax.barh(co2_data["Energy Source"], co2_data["CO2 Emission (kg per kWh)"], color=colors)
     ax.set_xlabel("CO₂ Emission (kg per kWh)")
     ax.set_title("Avg CO₂ Emission by Energy Source")
@@ -223,8 +291,9 @@ with r1c2:
     cost_data = (filtered_df.groupby("Energy Source")["Installation Cost (INR per kW)"]
                  .mean().sort_values(ascending=False).reset_index())
     fig, ax = plt.subplots(figsize=(7, 4))
+    blues = ["#1e3a5f", "#1e4976", "#1a5f9e", "#1a73c4", "#2186e0", "#4f9ef8", "#74b3fc", "#a8d0ff"]
     ax.barh(cost_data["Energy Source"], cost_data["Installation Cost (INR per kW)"],
-            color=sns.color_palette("Blues_r", len(cost_data)))
+            color=blues[:len(cost_data)])
     ax.set_xlabel("Installation Cost (INR per kW)")
     ax.set_title("Avg Installation Cost by Energy Source")
     plt.tight_layout(); st.pyplot(fig); plt.close()
@@ -241,9 +310,11 @@ with r2c1:
     gen_data = (filtered_df.groupby("Energy Source")["Percentage of Generation (India)"]
                 .mean().reset_index())
     fig, ax = plt.subplots(figsize=(6, 5))
+    dark_palette = ["#4f8ef7","#22c55e","#f59e0b","#ef4444","#a855f7","#14b8a6","#f97316","#ec4899"]
     ax.pie(gen_data["Percentage of Generation (India)"],
            labels=gen_data["Energy Source"], autopct="%1.1f%%", startangle=140,
-           colors=sns.color_palette("tab10", len(gen_data)))
+           colors=dark_palette[:len(gen_data)],
+           textprops={"color": "#e2e8f0"})
     ax.set_title("🇮🇳 Share of Electricity Generation in India")
     plt.tight_layout(); st.pyplot(fig); plt.close()
 
@@ -253,9 +324,9 @@ with r2c2:
     x = np.arange(len(avg_costs)); width = 0.35
     fig, ax = plt.subplots(figsize=(7, 4))
     ax.bar(x - width/2, avg_costs["Generation Cost (INR per unit)"],
-           width, label="Gen Cost", color="#1f77b4")
+           width, label="Gen Cost", color="#4f8ef7")
     ax.bar(x + width/2, avg_costs["Selling Price per Unit (INR)"],
-           width, label="Selling Price", color="#ff7f0e")
+           width, label="Selling Price", color="#f59e0b")
     ax.set_xticks(x)
     ax.set_xticklabels(avg_costs["Energy Source"], rotation=30, ha="right")
     ax.set_ylabel("INR per Unit")
@@ -271,7 +342,9 @@ st.subheader("🔗 Correlation Heatmap")
 numeric_cols = filtered_df.select_dtypes(include=np.number).columns.tolist()
 corr = filtered_df[numeric_cols].corr()
 fig, ax = plt.subplots(figsize=(12, 6))
-sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", ax=ax, linewidths=0.5)
+sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", ax=ax,
+            linewidths=0.5, linecolor="#2d2d2d",
+            annot_kws={"color": "#e2e8f0"})
 ax.set_title("Correlation Between Numeric Features")
 plt.tight_layout(); st.pyplot(fig); plt.close()
 
@@ -281,7 +354,6 @@ st.divider()
 # ── Section: Data Table ───────────────────────────────────────────────────────
 st.markdown('<a name="data-table"></a>', unsafe_allow_html=True)
 st.subheader("📋 Aggregated Summary by Energy Source")
-
 summary = (
     filtered_df.groupby(["Energy Source", "Energy Type"])
     .agg(
